@@ -8,7 +8,13 @@ const half = Math.ceil(brandLogos.length / 2);
 const firstRow = brandLogos.slice(0, half);
 const secondRow = brandLogos.slice(half);
 
-function LogoRow({ logos, reverse }: { logos: typeof brandLogos; reverse?: boolean }) {
+function LogoRow({
+  logos,
+  reverse,
+}: {
+  logos: typeof brandLogos;
+  reverse?: boolean;
+}) {
   const double = [...logos, ...logos]; // duplicate for seamless loop
 
   return (

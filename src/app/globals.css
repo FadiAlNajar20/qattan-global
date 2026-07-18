@@ -11,8 +11,10 @@
   --color-bg-primary: #0d0f11;
   --color-bg-secondary: #141618;
   --color-bg-elevated: #1c1f23;
-  --color-bg-light: #f5f3f0;
-  --color-bg-light-dim: #eeebe6;
+  /* --color-bg-light: #f5f3f0; */
+  --color-bg-light: #ffffff;
+  /* --color-bg-light-dim: #eeebe6; */
+  --color-bg-light-dim: #eeeeee;
 
   --color-text-primary: #f0ede8;
   --color-text-secondary: #b8b2a8;

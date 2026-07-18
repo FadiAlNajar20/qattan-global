@@ -85,7 +85,7 @@ export default async function HomePage({
       />
 
       {/* 6. History preview */}
-      <section className="bg-white border-y border-[var(--color-border-light)]">
+      <section className="bg-[var(--color-bg-light-dim)] border-y border-[var(--color-border-light)]">
         <Container className="section-spacing">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left: heading + CTA */}
@@ -128,7 +128,7 @@ export default async function HomePage({
       />
 
       {/* 8. Brands highlight */}
-      <section className="bg-[var(--color-bg-primary)]">
+      <section className="bg-[var(--color-bg-light-dim)]">
         <Container className="section-spacing">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <FadeIn>
@@ -136,7 +136,7 @@ export default async function HomePage({
                 eyebrow={h.brandsEyebrow}
                 title={h.brandsTitle}
                 description={h.brandsBody}
-                light
+                light={false}
               />
             </FadeIn>
             <FadeIn delay={0.1}>
@@ -164,14 +164,12 @@ export default async function HomePage({
                 <span className="text-[10px] uppercase tracking-widest text-[var(--color-accent)] font-semibold">
                   {tier.eyebrow}
                 </span>
-                <h3 className="font-bold text-white text-lg mt-2 mb-4">
-                  {tier.title}
-                </h3>
+                <h3 className="font-bold text-lg mt-2 mb-4">{tier.title}</h3>
                 <ul className="space-y-2" role="list">
                   {tier.brands.map((brand) => (
                     <li
                       key={brand.name}
-                      className="flex items-center gap-2.5 text-sm text-white/90"
+                      className="flex items-center gap-2.5 text-sm"
                     >
                       <span
                         aria-hidden="true"
@@ -188,7 +186,7 @@ export default async function HomePage({
       </section>
 
       {/* 9. Why Qattan */}
-      <section className="bg-[var(--color-bg-light-dim)]">
+      <section className="bg-[var(--color-bg-light)]">
         <Container className="section-spacing">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
@@ -213,7 +211,7 @@ export default async function HomePage({
       </section>
 
       {/* 10. Partners mention */}
-      <section className="bg-white border-y border-[var(--color-border-light)]">
+      <section className="bg-[var(--color-bg-light-dim)] border-y border-[var(--color-border-light)]">
         <Container className="section-spacing">
           <FadeIn>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
@@ -229,6 +227,7 @@ export default async function HomePage({
                 href={`/${locale}/partners`}
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-text-dark)] hover:text-[var(--color-text-dark-soft)] transition-colors group shrink-0"
               >
+                Discover
                 <ArrowRight
                   size={15}
                   aria-hidden="true"
@@ -244,7 +243,7 @@ export default async function HomePage({
             {dict.partners.accounts.map((account) => (
               <FadeInStaggerItem
                 key={account.name}
-                className="inline-flex items-center gap-2 px-4 py-2.5 border border-[var(--color-border-light)] rounded-lg bg-[var(--color-bg-light-dim)]"
+                className="inline-flex items-center gap-2 px-4 py-2.5 border border-[var(--color-border-light)] rounded-lg bg-[var(--color-bg-light)]"
               >
                 <span className="font-semibold text-sm text-[var(--color-text-dark)]">
                   {account.name}

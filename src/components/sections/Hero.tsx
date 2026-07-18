@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { motion, useReducedMotion, Variants } from "framer-motion";
@@ -37,14 +36,15 @@ export default function Hero({ dict, locale }: Props) {
     >
       {/* Background image */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero.png"
-          alt="Gattan Global"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center opacity-60"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero2.mp4" type="video/mp4" />
+        </video>
         {/* Gradient overlays for readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-primary)] via-[var(--color-bg-primary)]/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-bg-primary)]/70 via-transparent to-transparent" />
