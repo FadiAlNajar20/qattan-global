@@ -1,8 +1,7 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { useParams } from "next/navigation";
 import Container from "@/components/ui/Container";
 import { motion, Variants } from "framer-motion";
 import {
@@ -14,7 +13,6 @@ import {
   Sparkles,
   Tag,
   Star,
-  ArrowRight,
 } from "lucide-react";
 import type { Sector } from "@/types";
 
@@ -109,8 +107,7 @@ const cardVariants: Variants = {
 };
 
 export default function SectorsSection({ eyebrow, title, sectors }: Props) {
-  const params = useParams();
-  const locale = (params?.locale as string) || "en";
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
     <motion.section
@@ -133,7 +130,7 @@ export default function SectorsSection({ eyebrow, title, sectors }: Props) {
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 auto-rows-[380px] lg:auto-rows-[420px]"
         >
-          {sectors?.map((sector) => {
+          {sectors?.map((sector, index) => {
             const Icon = iconMap[sector.icon] ?? ShoppingBag;
             const config = sectorConfig[sector.icon] || {
               image: "/images/placeholder.webp",
@@ -147,58 +144,67 @@ export default function SectorsSection({ eyebrow, title, sectors }: Props) {
                 variants={cardVariants}
                 whileHover={{ scale: 1.015 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className={`relative group overflow-hidden rounded-2xl border border-slate-800/50 bg-slate-900 ${config.span}`}
+                onClick={() =>
+                  setExpandedIndex(expandedIndex === index ? null : index)
+                }
+                className={`relative group overflow-hidden rounded-2xl border border-slate-800/50 bg-slate-900 cursor-pointer ${config.span}`}
               >
-                <Link
+                {/* <Link
                   href={`/${locale}/sectors#${config.id}`}
                   className="relative block w-full h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-inset rounded-2xl"
-                >
-                  {/* Background Image with Cinematic Zoom */}
-                  <Image
-                    src={config.image}
-                    alt={sector.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
+                > */}
+                {/* Background Image with Cinematic Zoom */}
+                <Image
+                  src={config.image}
+                  alt={sector.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                  className={`object-cover transition-transform duration-700 ease-out ${expandedIndex === index ? "scale-105" : "group-hover:scale-105"}`}
+                />
 
-                  {/* Gradient Overlay for Text Contrast */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+                {/* Gradient Overlay for Text Contrast */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent transition-opacity duration-500 ${expandedIndex === index ? "opacity-100" : "opacity-90 group-hover:opacity-100"}`}
+                />
 
-                  {/* Reveal Content Container */}
-                  <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                    <div className="translate-y-5 sm:translate-y-5 group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-                      {/* Icon & Title */}
-                      <div className="flex items-center gap-4 mb-3 sm:mb-4">
-                        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-amber-500/10 border border-amber-500/20 backdrop-blur-sm">
-                          <Icon
-                            className="w-6 h-6 text-amber-500"
-                            strokeWidth={1.5}
-                          />
-                        </div>
-                        <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                          {sector.title}
-                        </h3>
+                {/* Reveal Content Container */}
+                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+                  <div
+                    className={`transition-transform duration-500 ease-in-out ${expandedIndex === index ? "translate-y-0" : "translate-y-5 sm:translate-y-5 group-hover:translate-y-0"}`}
+                  >
+                    {/* Icon & Title */}
+                    <div className="flex items-center gap-4 mb-3 sm:mb-4">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-amber-500/10 border border-amber-500/20 backdrop-blur-sm">
+                        <Icon
+                          className="w-6 h-6 text-amber-500"
+                          strokeWidth={1.5}
+                        />
                       </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                        {sector.title}
+                      </h3>
+                    </div>
 
-                      {/* Expandable Description & Button */}
-                      <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
-                        <div className="overflow-hidden">
-                          <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                            {sector.description}
-                          </p>
-                          <span className="inline-flex items-center gap-2 text-amber-500 font-semibold text-sm tracking-wide uppercase">
+                    {/* Expandable Description & Button */}
+                    <div
+                      className={`grid transition-all duration-500 ease-in-out ${expandedIndex === index ? "grid-rows-[1fr]" : "grid-rows-[0fr] group-hover:grid-rows-[1fr]"}`}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                          {sector.description}
+                        </p>
+                        {/* <span className="inline-flex items-center gap-2 text-amber-500 font-semibold text-sm tracking-wide uppercase">
                             Explore Sector
                             <ArrowRight
                               size={16}
                               className="transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
                             />
-                          </span>
-                        </div>
+                          </span> */}
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
+                {/* </Link> */}
               </motion.div>
             );
           })}
