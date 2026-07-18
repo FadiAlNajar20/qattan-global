@@ -104,6 +104,17 @@ export interface Dictionary {
     historyTitle: string;
     historyBody: string;
     historyCta: string;
+    evolution: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      eras: {
+        year: string;
+        tag: string;
+        title: string;
+        description: string;
+      }[];
+    };
     ecosystemEyebrow: string;
     ecosystemTitle: string;
     ecosystemBody: string;
@@ -117,7 +128,8 @@ export interface Dictionary {
     partnersTitle: string;
     whyEyebrow: string;
     whyTitle: string;
-    whyPoints: string[];
+    whyBody?: string;
+    whyPoints: { number: string; title: string; description: string }[];
     galleryEyebrow: string;
     galleryTitle: string;
     galleryCta: string;
@@ -232,10 +244,17 @@ export interface Dictionary {
     cta: string;
   };
   footer: {
-    tagline: string;
+    richTagline: string;
     quickLinks: string;
     getInTouch: string;
     copyright: string;
+    corporate: string;
+    tagline: string;
+    discover: string;
+    headquarters: string;
+    ammanJordan: string;
+    privacyPolicy: string;
+    termsOfService: string;
   };
   breadcrumbs: {
     home: string;

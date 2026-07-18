@@ -61,6 +61,7 @@ export default async function LocaleLayout({
     <html
       lang={lang}
       dir={dir}
+      className="scroll-smooth"
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >

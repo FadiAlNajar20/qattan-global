@@ -84,9 +84,34 @@ export const en: Dictionary = {
     historyEyebrow: "Our journey",
     historyTitle: "Seven decades of evolution.",
     historyBody:
-      "From a single boutique in Amman to a diversified group with operations across Jordan — the Qattan story is one of perseverance, family, and consistent growth.",
-    historyCta: "View full history",
-    ecosystemEyebrow: "Business ecosystem",
+      "From a single perfumery in 1951 to a dynamic corporate group spanning multiple sectors. Discover how Qattan Global built its legacy.",
+    historyCta: "Explore our history",
+    evolution: {
+      eyebrow: "OUR JOURNEY",
+      title: "Seven decades of evolution.",
+      description: "A testament to resilience and vision. Witness how Qattan transitioned from a 1951 pioneering enterprise to a modern corporate empire shaping the regional commercial landscape.",
+      eras: [
+        {
+          year: "1951 — The Genesis",
+          tag: "The Foundation",
+          title: "A Legacy Built on Absolute Trust",
+          description: "Established in Amman, Jordan, laying down the foundational pillars of uncompromising commercial integrity, initiating pioneering trading loops and distribution routes across the region."
+        },
+        {
+          year: "The Era of Expansion",
+          tag: "Global Partnerships",
+          title: "Securing World-Class Alliances",
+          description: "Accelerating market dominance by capturing highly coveted exclusive agency rights for elite international fashion houses, luxury cosmetics, and premium consumer goods."
+        },
+        {
+          year: "The Modern Conglomerate (Present)",
+          tag: "Integrated System",
+          title: "A Dynamic Multi-Sector Ecosystem",
+          description: "Operating today as a highly integrated multi-corporate force. Synchronizing proprietary brands, high-tier retail, advanced logistics, and robust wholesale commercial structures."
+        }
+      ]
+    },
+    ecosystemEyebrow: "Our Ecosystem",
     ecosystemTitle: "One group. Many sectors.",
     ecosystemBody:
       "Qattan Global operates across interconnected business verticals, creating a comprehensive commercial ecosystem that serves consumers and businesses alike.",
@@ -96,18 +121,33 @@ export const en: Dictionary = {
     brandsTitle: "Brands we own, co-own, and represent.",
     brandsBody:
       "From proprietary labels built in-house to exclusive agency agreements with celebrated international houses — our brand portfolio reflects decades of commercial expertise.",
-    brandsCta: "View all brands",
+    brandsCta: "View all",
     partnersEyebrow: "Key relationships",
     partnersTitle: "Trusted by Jordan's leading retailers.",
     whyEyebrow: "Why Qattan Global",
     whyTitle: "What sets us apart.",
+    whyBody: "We are not just participants in the market; we are market makers. By bridging heritage with advanced infrastructure, we offer unparalleled operational synergy that drives growth across retail, wholesale, and distribution.",
     whyPoints: [
-      "Over 70 years of unbroken trust with Jordanian consumers",
-      "Multi-generational family leadership with deep market knowledge",
-      "Exclusive agency rights for prestigious international brands",
-      "Robust distribution network serving retail and wholesale",
-      "Duty-free operations in Aqaba's Special Economic Zone",
-      "Proprietary brand development alongside global partnerships",
+      {
+        number: "01",
+        title: "A Legacy Since 1951",
+        description: "Over seven decades of unbroken market trust, transitioning from a pioneering commerce foundation into a multi-sector regional powerhouse.",
+      },
+      {
+        number: "02",
+        title: "Full-Scale Integration",
+        description: "We don't just represent; we control the full supply cycle. Integrating world-class logistics, robust wholesale distribution, and premium frontline retail under one cohesive ecosystem.",
+      },
+      {
+        number: "03",
+        title: "Exclusive Portfolio Rights",
+        description: "The trusted regional custodian for prestigious international fashion houses, luxury cosmetics, and industry-leading appliance brands.",
+      },
+      {
+        number: "04",
+        title: "Gateway to the Levant",
+        description: "Deeply rooted infrastructure spanning major commercial hubs in Jordan—from Amman to the Aqaba special economic zone—serving both local and regional markets with absolute precision.",
+      },
     ],
     galleryEyebrow: "Gallery",
     galleryTitle: "Our world in images.",
@@ -403,9 +443,17 @@ export const en: Dictionary = {
   },
   footer: {
     tagline: "A legacy of trust, built in Amman since 1951.",
+    richTagline:
+      "Seven decades of commerce, trust, and vision. Shaping Jordanian commerce since 1951.",
     quickLinks: "Quick links",
     getInTouch: "Get in touch",
-    copyright: "© {year} Qattan Global. All rights reserved. Developed by ",
+    corporate: "Corporate",
+    discover: "Discover",
+    headquarters: "Headquarters",
+    ammanJordan: "Amman, Jordan",
+    privacyPolicy: "Privacy Policy",
+    termsOfService: "Terms of Service",
+    copyright: "© {year} Qattan Global. All rights reserved.",
   },
   breadcrumbs: {
     home: "Home",

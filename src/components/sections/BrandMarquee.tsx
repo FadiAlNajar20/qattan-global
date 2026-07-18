@@ -33,7 +33,7 @@ function LogoRow({
               alt={brand.name}
               width={100}
               height={40}
-              className="max-h-8 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              className="max-h-8 w-auto h-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
               loading="lazy"
               unoptimized
             />
