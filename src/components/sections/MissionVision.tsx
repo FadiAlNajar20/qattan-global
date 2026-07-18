@@ -19,7 +19,7 @@ export default function MissionVision({
   visionPoints,
 }: Props) {
   return (
-    <section className="bg-[var(--color-bg-primary)] relative overflow-hidden">
+    <section className="bg-[var(--color-bg-light-dim)] relative overflow-hidden">
       {/* Subtle gradient mesh */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -36,12 +36,10 @@ export default function MissionVision({
             <span className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
               {missionEyebrow}
             </span>
-            <h2 className="font-bold text-white text-[clamp(1.5rem,3vw,2.25rem)]  mt-4 mb-6 leading-tight text-balance">
+            <h2 className="font-bold text-[clamp(1.5rem,3vw,2.25rem)]  mt-4 mb-6 leading-tight text-balance">
               {missionTitle}
             </h2>
-            <p className="text-white/90 leading-relaxed text-base">
-              {missionBody}
-            </p>
+            <p className="leading-relaxed text-base">{missionBody}</p>
             {/* Decorative line */}
             <div className="mt-10 h-px w-16 bg-[var(--color-accent)] opacity-60" />
           </FadeIn>
@@ -51,7 +49,7 @@ export default function MissionVision({
             <span className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
               {visionEyebrow}
             </span>
-            <h2 className="font-bold text-white text-[clamp(1.5rem,3vw,2.25rem)] mt-4 mb-8 leading-tight text-balance">
+            <h2 className="font-bold text-[clamp(1.5rem,3vw,2.25rem)] mt-4 mb-8 leading-tight text-balance">
               {visionTitle}
             </h2>
             <ul className="space-y-4" role="list">
@@ -59,11 +57,9 @@ export default function MissionVision({
                 <li key={i} className="flex items-start gap-4">
                   <span
                     aria-hidden="true"
-                    className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]"
+                    className="mt-3 shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]"
                   />
-                  <p className="text-white/90 text-base leading-relaxed">
-                    {point}
-                  </p>
+                  <p className="text-base leading-relaxed">{point}</p>
                 </li>
               ))}
             </ul>

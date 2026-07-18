@@ -49,7 +49,7 @@ export default function SectionHeading({
       {description && (
         <p
           className={clsx(
-            "text-base leading-relaxed max-w-prose",
+            "text-base leading-relaxed",
             light ? "text-white/90" : "text-[var(--color-text-dark-soft)]",
           )}
         >

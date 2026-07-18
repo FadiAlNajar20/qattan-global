@@ -3,7 +3,11 @@
 import type { Value } from "@/types";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { FadeIn, StaggerChildren, fadeUpItem } from "@/components/motion/FadeIn";
+import {
+  FadeIn,
+  StaggerChildren,
+  fadeUpItem,
+} from "@/components/motion/FadeIn";
 import { motion } from "framer-motion";
 
 interface Props {
@@ -14,7 +18,7 @@ interface Props {
 
 export default function ValuesSection({ eyebrow, title, values }: Props) {
   return (
-    <section className="bg-[var(--color-bg-light-dim)]">
+    <section className="bg-[var(--color-bg-light)]">
       <Container className="section-spacing">
         <FadeIn>
           <SectionHeading eyebrow={eyebrow} title={title} />

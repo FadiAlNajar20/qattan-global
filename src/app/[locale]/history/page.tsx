@@ -8,6 +8,7 @@ import Timeline from "@/components/sections/Timeline";
 import { FadeIn } from "@/components/motion/FadeIn";
 import CountUp from "@/components/motion/CountUp";
 import CTABanner from "@/components/sections/CTABanner";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   return [{ locale: "en" }, { locale: "ar" }];
@@ -43,15 +44,17 @@ export default async function HistoryPage({
   return (
     <>
       {/* Hero */}
-      <section className="bg-[var(--color-bg-primary)] pt-32 pb-20 relative overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 40% 50% at 70% 40%, rgba(200,191,176,0.07), transparent 70%)",
-          }}
-        />
-        <Container>
+      <section className=" pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            fill
+            src="/images/history.webp"
+            alt=""
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        <Container className="relative z-10">
           <FadeIn>
             <nav aria-label="Breadcrumb" className="mb-8">
               <ol className="flex items-center gap-2 text-xs text-[var(--color-text-muted)]">
