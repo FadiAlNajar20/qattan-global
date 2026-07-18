@@ -33,9 +33,9 @@ export default function CTABanner({ locale, title, body, button }: Props) {
             <p className="text-base leading-relaxed">{body}</p>
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-text-primary)] text-[var(--color-text-dark)] font-semibold rounded-md hover:bg-[var(--color-accent-hover)] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus)]"
+              className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-4 bg-slate-900 text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-amber-500 transition-colors duration-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
             >
-              {button}
+              <span>{button}</span>
               <ArrowRight size={16} aria-hidden="true" className="icon-dir" />
             </Link>
           </div>

@@ -197,7 +197,7 @@ export default async function BrandsPage({
                       alt={brand.name}
                       width={120}
                       height={54}
-                      className="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="max-h-20 w-auto h-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                       loading="lazy"
                       unoptimized
                     />

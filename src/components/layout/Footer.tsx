@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, Globe } from "lucide-react";
 import type { Dictionary } from "@/types";
 import type { Locale } from "@/types";
 
@@ -13,130 +12,219 @@ export default function Footer({ dict, locale }: Props) {
   const year = new Date().getFullYear();
   const copyright = dict.footer.copyright.replace("{year}", String(year));
 
-  const quickLinks = [
+  const corporateLinks = [
     { label: dict.nav.about, href: `/${locale}/about` },
     { label: dict.nav.history, href: `/${locale}/history` },
-    { label: dict.nav.brands, href: `/${locale}/brands` },
-    { label: dict.nav.sectors, href: `/${locale}/sectors` },
+    // { label: dict.nav.sectors, href: `/${locale}/sectors` },
     { label: dict.nav.partners, href: `/${locale}/partners` },
+  ];
+
+  const discoverLinks = [
+    { label: dict.nav.brands, href: `/${locale}/brands` },
     { label: dict.nav.gallery, href: `/${locale}/gallery` },
     { label: dict.nav.contact, href: `/${locale}/contact` },
+    {
+      label: dict.nav.qattanglobalStore || "Qattan Global Store",
+      href: `/${locale}/store`,
+    },
   ];
 
   return (
-    <footer
-      role="contentinfo"
-      className="bg-[var(--color-bg-primary)] text-white/90 relative overflow-hidden"
-    >
-      {/* Subtle top border accent */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent opacity-30" />
-
-      <div className="container-qg py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          {/* Brand column */}
-          <div className="lg:col-span-2 space-y-6">
-            <Link href={`/${locale}`} aria-label={dict.aria.logo}>
+    <footer className="bg-slate-950 text-slate-300 border-t border-slate-800/50">
+      <div className="max-w-7xl mx-auto py-16 px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+          {/* Section 1: Brand & Identity */}
+          <div className="lg:col-span-2 space-y-6 pr-0 lg:pr-8">
+            <Link
+              href={`/${locale}`}
+              aria-label={dict.aria?.logo || "Qattan Global Home"}
+              className="inline-block"
+            >
               <Image
                 src="/images/logo.webp"
                 alt="Qattan Global"
                 width={160}
                 height={48}
-                className="h-10 w-auto brightness-0 invert opacity-90"
+                className="h-12 w-auto brightness-0 invert opacity-95"
               />
             </Link>
-            <p className="text-sm leading-relaxed max-w-xs text-white/90">
-              {dict.footer.tagline}
+            <p className="text-sm leading-relaxed max-w-sm text-slate-400">
+              {dict.footer.richTagline}
             </p>
-            <div className="h-px w-12 bg-[var(--color-accent)] opacity-60" />
+            <div className="flex items-center gap-5 pt-2">
+              <a
+                href="https://www.facebook.com/kattan.global"
+                aria-label="Facebook"
+                className="text-slate-400 hover:text-white hover:-translate-y-1 transition-all duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/qattan.global"
+                aria-label="Instagram"
+                className="text-slate-400 hover:text-white hover:-translate-y-1 transition-all duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+            </div>
           </div>
 
-          {/* Quick links */}
-          <div className="space-y-4">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-muted)]">
-              {dict.footer.quickLinks}
+          {/* Section 2: Corporate Links */}
+          <div className="space-y-6">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-100">
+              {dict.footer.corporate}
             </h3>
-            <ul role="list" className="space-y-2.5">
-              {quickLinks.map((link) => (
+            <ul role="list" className="space-y-3.5">
+              {corporateLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/90 hover:text-[var(--color-accent)] transition-colors duration-200"
+                    className="group relative text-sm text-slate-400 hover:text-white transition-colors duration-200 inline-block"
                   >
                     {link.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full" />
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact column */}
-          <div className="space-y-4">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-muted)]">
-              {dict.footer.getInTouch}
+          {/* Section 3: Discover Links */}
+          <div className="space-y-6">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-100">
+              {dict.footer.discover}
             </h3>
-            <ul role="list" className="space-y-3">
-              <li>
-                <a
-                  href="tel:+96279709066"
-                  className="flex items-start gap-3 text-sm text-white/90 hover:text-[var(--color-accent)] transition-colors group"
+            <ul role="list" className="space-y-3.5">
+              {discoverLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="group relative text-sm text-slate-400 hover:text-white transition-colors duration-200 inline-block"
+                  >
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Section 4: Headquarters */}
+          <div className="space-y-6">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-100">
+              {dict.footer.headquarters}
+            </h3>
+            <address className="not-italic space-y-4 text-sm text-slate-400">
+              <div className="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="shrink-0 text-slate-500 mt-0.5"
                 >
-                  <Phone
-                    size={15}
-                    className="mt-0.5 shrink-0 text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] transition-colors"
-                    aria-hidden="true"
-                  />
-                  <span dir="ltr">+962 79 709 0660</span>
+                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>{dict.footer.ammanJordan}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="shrink-0 text-slate-500"
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <a
+                  href="tel:+962797090660"
+                  className="hover:text-white transition-colors"
+                  dir="ltr"
+                >
+                  +962 79 709 0660
                 </a>
-              </li>
-              <li>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="shrink-0 text-slate-500"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
                 <a
                   href="mailto:contact@qattanglobal.com"
-                  className="flex items-start gap-3 text-sm text-white/90 hover:text-[var(--color-accent)] transition-colors group"
+                  className="hover:text-white transition-colors"
                 >
-                  <Mail
-                    size={15}
-                    className="mt-0.5 shrink-0 text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] transition-colors"
-                    aria-hidden="true"
-                  />
-                  <span>contact@qattanglobal.com</span>
+                  contact@qattanglobal.com
                 </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.qattanglobal.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-sm text-white/90 hover:text-[var(--color-accent)] transition-colors group"
-                >
-                  <Globe
-                    size={15}
-                    className="mt-0.5 shrink-0 text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] transition-colors"
-                    aria-hidden="true"
-                  />
-                  <span>www.qattanglobal.com</span>
-                </a>
-              </li>
-            </ul>
+              </div>
+            </address>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-16 pt-6 border-t border-[var(--color-border)] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-[var(--color-text-muted)]">
-            {copyright}
-            <a
-              href="https://esafqa.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors group underline"
+        {/* Bottom Bar: Copyright & Legal */}
+        <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-slate-500">{copyright}</p>
+          <div className="flex items-center gap-6 text-sm text-slate-500">
+            <Link
+              href={`/${locale}/privacy`}
+              className="hover:text-slate-300 transition-colors"
             >
-              eSafqa
-            </a>
-          </p>
-          <div className="flex items-center gap-1 text-xs text-[var(--color-text-muted)]">
-            <span>Amman, Jordan</span>
-            <span aria-hidden="true">·</span>
-            <span>Est. 1951</span>
+              {dict.footer.privacyPolicy}
+            </Link>
+            <Link
+              href={`/${locale}/terms`}
+              className="hover:text-slate-300 transition-colors"
+            >
+              {dict.footer.termsOfService}
+            </Link>
           </div>
         </div>
       </div>

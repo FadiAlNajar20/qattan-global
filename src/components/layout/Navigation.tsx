@@ -26,6 +26,10 @@ export default function Navigation({ dict, locale }: Props) {
   // Compute alternate locale path for language switcher
   const altPath = pathname.replace(`/${locale}`, `/${altLocale}`);
 
+  // Determine if the navigation should force the solid/light-background theme
+  const isLightPage = pathname.includes("/contact");
+  const isSolidTheme = scrolled || isLightPage;
+
   // Scroll detection
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -59,12 +63,13 @@ export default function Navigation({ dict, locale }: Props) {
   }, [menuOpen]);
 
   const navItems = [
-    { label: dict.nav.about, href: `/${locale}/about` },
-    { label: dict.nav.history, href: `/${locale}/history` },
+    // { label: dict.nav.home, href: `/${locale}` },
+    // { label: dict.nav.about, href: `/${locale}/about` },
+    // { label: dict.nav.history, href: `/${locale}/history` },
     { label: dict.nav.brands, href: `/${locale}/brands` },
-    { label: dict.nav.sectors, href: `/${locale}/sectors` },
-    { label: dict.nav.partners, href: `/${locale}/partners` },
-    { label: dict.nav.gallery, href: `/${locale}/gallery` },
+    // { label: dict.nav.sectors, href: `/${locale}/sectors` },
+    // { label: dict.nav.partners, href: `/${locale}/partners` },
+    // { label: dict.nav.gallery, href: `/${locale}/gallery` },
     { label: dict.nav.contact, href: `/${locale}/contact` },
     { label: dict.nav.qattanglobalStore, href: `https://qattanglobal.com` },
   ];
@@ -78,7 +83,7 @@ export default function Navigation({ dict, locale }: Props) {
         role="banner"
         className={[
           "fixed inset-x-0 top-0 z-[var(--z-nav)] transition-all duration-500",
-          scrolled
+          isSolidTheme
             ? "bg-white/95 backdrop-blur-md border-b border-[var(--color-border-light)] shadow-sm"
             : "bg-transparent",
         ].join(" ")}
@@ -101,8 +106,8 @@ export default function Navigation({ dict, locale }: Props) {
                 height={48}
                 priority
                 className={[
-                  "h-9 md:h-11 w-auto transition-all duration-300",
-                  !scrolled ? "brightness-0 invert" : "",
+                  "w-auto h-auto transition-all duration-300",
+                  !isSolidTheme ? "brightness-0 invert" : "",
                 ].join(" ")}
               />
             </Link>
@@ -117,11 +122,15 @@ export default function Navigation({ dict, locale }: Props) {
                     aria-current={isActive(item.href) ? "page" : undefined}
                     className={[
                       "nav-link-underline px-3 py-2 text-sm font-medium transition-colors duration-200",
-                      scrolled
+                      isSolidTheme
                         ? "text-[var(--color-text-dark)] hover:text-[var(--color-text-dark-soft)]"
                         : "text-white/90 hover:text-white",
                     ].join(" ")}
-                    target={item.href === "https://qattanglobal.com" ? "_blank" : "_self"}
+                    target={
+                      item.href === "https://qattanglobal.com"
+                        ? "_blank"
+                        : "_self"
+                    }
                   >
                     {item.label}
                   </Link>
@@ -137,7 +146,7 @@ export default function Navigation({ dict, locale }: Props) {
                 aria-label={dict.aria.langSwitcher}
                 className={[
                   "flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200",
-                  scrolled
+                  isSolidTheme
                     ? "text-[var(--color-text-dark)] hover:bg-[var(--color-bg-light-dim)]"
                     : "text-white/90 hover:text-white hover:bg-white/10",
                 ].join(" ")}
@@ -146,7 +155,7 @@ export default function Navigation({ dict, locale }: Props) {
                   size={15}
                   aria-hidden="true"
                   className={
-                    scrolled
+                    isSolidTheme
                       ? "text-[var(--color-text-muted)]"
                       : "text-white/70"
                   }
@@ -159,7 +168,7 @@ export default function Navigation({ dict, locale }: Props) {
                 href={`/${locale}/contact`}
                 className={[
                   "hidden lg:inline-flex items-center px-4 py-2 rounded-md text-sm font-semibold transition-all duration-200",
-                  scrolled
+                  isSolidTheme
                     ? "bg-[var(--color-text-dark)] text-white hover:bg-[var(--color-text-dark-soft)]"
                     : "bg-white text-[var(--color-text-dark)] hover:bg-white/90",
                 ].join(" ")}
@@ -176,7 +185,7 @@ export default function Navigation({ dict, locale }: Props) {
                 onClick={() => setMenuOpen(!menuOpen)}
                 className={[
                   "lg:hidden flex items-center justify-center w-10 h-10 rounded-md transition-colors duration-200",
-                  scrolled
+                  isSolidTheme
                     ? "text-[var(--color-text-dark)] hover:bg-[var(--color-bg-light-dim)]"
                     : "text-white hover:bg-white/10",
                 ].join(" ")}
@@ -264,7 +273,11 @@ export default function Navigation({ dict, locale }: Props) {
                             ? "bg-[var(--color-bg-light-dim)] text-[var(--color-text-dark)] font-semibold"
                             : "text-[var(--color-text-dark-soft)] hover:bg-[var(--color-bg-light-dim)] hover:text-[var(--color-text-dark)]",
                         ].join(" ")}
-                        target={item.href === "https://qattanglobal.com" ? "_blank" : "_self"}
+                        target={
+                          item.href === "https://qattanglobal.com"
+                            ? "_blank"
+                            : "_self"
+                        }
                       >
                         {item.label}
                       </Link>

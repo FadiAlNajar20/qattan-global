@@ -28,10 +28,7 @@ export default function SectionHeading({
       {eyebrow && (
         <p
           className={clsx(
-            "text-xs font-semibold uppercase tracking-widest",
-            light
-              ? "text-[var(--color-accent)]"
-              : "text-[var(--color-text-muted)]",
+            "text-xs font-semibold uppercase tracking-widest text-[var(--color-text-sub-above)]",
           )}
         >
           {eyebrow}
