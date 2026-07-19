@@ -8,7 +8,7 @@ interface Props {
   missionEyebrow: string;
   missionTitle: string;
   missionBody: string;
-  missionCta: string;
+  missionCta?: string;
   visionEyebrow: string;
   visionTitle: string;
   visionPoints: string[];
@@ -104,13 +104,15 @@ export default function MissionVision({
                 {missionBody}
               </p>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-slate-900 dark:text-slate-50 hover:text-amber-500 dark:hover:text-amber-500 transition-colors group"
-              >
-                {missionCta}
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1 rtl:group-hover:-translate-y-1" />
-              </a>
+              {missionCta && (
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-slate-900 dark:text-slate-50 hover:text-amber-500 dark:hover:text-amber-500 transition-colors group"
+                >
+                  {missionCta}
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1 rtl:group-hover:-translate-y-1" />
+                </a>
+              )}
             </motion.div>
           </div>
 
