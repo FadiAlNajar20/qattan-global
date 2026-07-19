@@ -18,27 +18,27 @@ interface Props {
 const RETAILERS = [
   {
     name: "Carrefour",
-    image: "/images/Carrefour.webp",
+    image: "/images/carrefour.webp",
   },
   {
     name: "SmartBuy",
-    image: "/images/SmartBuy.webp",
+    image: "/images/smartBuy.webp",
   },
   {
     name: "Leaders",
-    image: "/images/Leaders.webp",
+    image: "/images/leaders.webp",
   },
   {
     name: "Darwish",
-    image: "/images/Darwish.webp",
+    image: "/images/darwish.webp",
   },
   {
     name: "DNA",
-    image: "/images/DNA.webp",
+    image: "/images/dna.webp",
   },
   {
     name: "Safeway",
-    image: "/images/Safeway.webp",
+    image: "/images/safeway.webp",
   },
 ];
 

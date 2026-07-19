@@ -2,13 +2,13 @@
 
 import Container from "@/components/ui/Container";
 import { ArrowUpRight } from "lucide-react";
-import { useParams } from "next/navigation";
 import { motion, Variants } from "framer-motion";
 
 interface Props {
   missionEyebrow: string;
   missionTitle: string;
   missionBody: string;
+  missionCta: string;
   visionEyebrow: string;
   visionTitle: string;
   visionPoints: string[];
@@ -16,21 +16,21 @@ interface Props {
 
 const leftVariants: Variants = {
   hidden: { clipPath: "inset(100% 0 0 0)", y: 40, opacity: 0 },
-  visible: { 
+  visible: {
     clipPath: "inset(-20% 0 -20% 0)",
-    y: 0, 
+    y: 0,
     opacity: 1,
-    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } 
+    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
 const rightHeaderVariants: Variants = {
   hidden: { clipPath: "inset(100% 0 0 0)", y: 40, opacity: 0 },
-  visible: { 
+  visible: {
     clipPath: "inset(-20% 0 -20% 0)",
-    y: 0, 
+    y: 0,
     opacity: 1,
-    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 } 
+    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 },
   },
 };
 
@@ -59,18 +59,21 @@ export default function MissionVision({
   missionEyebrow,
   missionTitle,
   missionBody,
+  missionCta,
   visionEyebrow,
+  visionTitle,
   visionPoints,
 }: Props) {
-  const params = useParams();
-  const locale = (params?.locale as string) || "en";
-
   const splitTitle = missionTitle
     .split(". ")
     .map((s, i, arr) => (i < arr.length - 1 ? s + "." : s));
 
+  const visionWords = visionTitle ? visionTitle.split(" ") : [];
+  const lastVisionWord = visionWords.pop();
+  const firstVisionPart = visionWords.join(" ");
+
   return (
-    <motion.section 
+    <motion.section
       className="relative overflow-hidden bg-[var(--color-bg-light-dim)] dark:bg-slate-950 py-24 lg:py-32"
       initial="hidden"
       whileInView="visible"
@@ -105,7 +108,7 @@ export default function MissionVision({
                 href="#"
                 className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-slate-900 dark:text-slate-50 hover:text-amber-500 dark:hover:text-amber-500 transition-colors group"
               >
-                Corporate Philosophy
+                {missionCta}
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1 rtl:group-hover:-translate-y-1" />
               </a>
             </motion.div>
@@ -118,23 +121,23 @@ export default function MissionVision({
                 {visionEyebrow}
               </span>
               <h2 className="text-2xl lg:text-3xl font-serif text-slate-900 dark:text-slate-50 tracking-tight leading-tight mb-14 text-balance">
-                Growth rooted in{" "}
+                {firstVisionPart}{" "}
                 <span className="relative inline-block pb-1">
-                  purpose.
+                  {lastVisionWord}
                   <span className="absolute start-0 bottom-0 w-full h-[3px] bg-amber-500/80 rounded-full" />
                 </span>
               </h2>
             </motion.div>
 
-            <motion.ul 
-              className="space-y-6" 
+            <motion.ul
+              className="space-y-6"
               role="list"
               variants={staggerContainerVariants}
             >
               {visionPoints.map((point, i) => {
                 const num = String(i + 1).padStart(2, "0");
                 return (
-                  <motion.li 
+                  <motion.li
                     key={num}
                     variants={cardVariants}
                     className="group relative overflow-hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 p-8 rounded-2xl transition-all duration-500 ease-out hover:bg-white dark:hover:bg-slate-900 hover:border-slate-300/80 dark:hover:border-slate-700/80 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/20 dark:hover:shadow-black/20"

@@ -4,51 +4,22 @@ import { useEffect, useRef, useState } from "react";
 import { Calendar, Award, Handshake, Users } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
+import type { StatCard } from "@/types";
+
+const iconMap: Record<string, React.ElementType> = {
+  Calendar,
+  Award,
+  Handshake,
+  Users,
+};
+
 interface Props {
   eyebrow?: string;
   title?: string;
   description?: string;
   light?: boolean;
+  stats: StatCard[];
 }
-
-const statsData = [
-  {
-    id: 1,
-    icon: Calendar,
-    target: 1951,
-    prefix: "",
-    suffix: "",
-    title: "Established",
-    description: "Our journey began from Amman",
-  },
-  {
-    id: 2,
-    icon: Award,
-    target: 70,
-    prefix: "+",
-    suffix: "",
-    title: "Years of Trust",
-    description: "Seven decades of commercial vision",
-  },
-  {
-    id: 3,
-    icon: Handshake,
-    target: 40,
-    prefix: "+",
-    suffix: "",
-    title: "Global Partners",
-    description: "World-class trusted brands",
-  },
-  {
-    id: 4,
-    icon: Users,
-    target: 500,
-    prefix: "+",
-    suffix: "",
-    title: "Team Members",
-    description: "The heart and driving force of our group",
-  },
-];
 
 function CountUpNumber({
   target,
@@ -115,7 +86,7 @@ function CountUpNumber({
   );
 }
 
-export default function StatsSection({ eyebrow, title, description }: Props) {
+export default function StatsSection({ eyebrow, title, description, stats }: Props) {
   const containerVariants: Variants = {
     hidden: {},
     visible: {
@@ -159,7 +130,7 @@ export default function StatsSection({ eyebrow, title, description }: Props) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header Area */}
         {(eyebrow || title || description) && (
-          <motion.div className="text-left max-w-5xl mb-16">
+          <motion.div className="text-start max-w-5xl mb-16">
             {eyebrow && (
               <motion.p variants={textRevealVariants} className="text-[var(--color-text-sub-above)] font-semibold tracking-widest uppercase text-sm mb-3">
                 {eyebrow}
@@ -178,7 +149,9 @@ export default function StatsSection({ eyebrow, title, description }: Props) {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {statsData.map((stat) => (
+          {stats.map((stat) => {
+            const Icon = iconMap[stat.icon] || Calendar;
+            return (
             <motion.div
               key={stat.id}
               variants={cinematicRevealVariants}
@@ -186,7 +159,7 @@ export default function StatsSection({ eyebrow, title, description }: Props) {
             >
               {/* Icon Container */}
               <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-amber-500/5 border border-amber-500/10 text-amber-500 mb-6 transition-all duration-300 group-hover:bg-amber-500/10 group-hover:border-amber-500/20 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] group-hover:scale-110">
-                <stat.icon className="w-8 h-8" strokeWidth={1.5} />
+                <Icon className="w-8 h-8" strokeWidth={1.5} />
               </div>
 
               {/* Number */}
@@ -204,7 +177,7 @@ export default function StatsSection({ eyebrow, title, description }: Props) {
                 {stat.description}
               </p>
             </motion.div>
-          ))}
+          )})}
         </div>
       </div>
     </motion.section>

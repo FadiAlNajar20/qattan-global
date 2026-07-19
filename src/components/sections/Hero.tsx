@@ -17,16 +17,20 @@ export default function Hero({ dict, locale }: Props) {
 
   const containerVariants: Variants = {
     hidden: {},
-    visible: { 
-      transition: { 
-        staggerChildren: 0.2, 
-        delayChildren: 0.3 
-      } 
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
     },
   };
 
   const textRevealVariants: Variants = {
-    hidden: { clipPath: "inset(100% 0 0 0)", y: shouldReduceMotion ? 0 : 40, opacity: 0 },
+    hidden: {
+      clipPath: "inset(100% 0 0 0)",
+      y: shouldReduceMotion ? 0 : 40,
+      opacity: 0,
+    },
     visible: {
       clipPath: "inset(-20% 0 -20% 0)", // Allow slight bleed for shadows
       y: 0,
@@ -45,7 +49,12 @@ export default function Hero({ dict, locale }: Props) {
   };
 
   const cinematicRevealVariants: Variants = {
-    hidden: { opacity: 0, filter: shouldReduceMotion ? "blur(0px)" : "blur(12px)", scale: shouldReduceMotion ? 1 : 0.95, y: shouldReduceMotion ? 0 : 60 },
+    hidden: {
+      opacity: 0,
+      filter: shouldReduceMotion ? "blur(0px)" : "blur(12px)",
+      scale: shouldReduceMotion ? 1 : 0.95,
+      y: shouldReduceMotion ? 0 : 60,
+    },
     visible: {
       opacity: 1,
       filter: "blur(0px)",
@@ -88,7 +97,7 @@ export default function Hero({ dict, locale }: Props) {
             {/* Eyebrow */}
             <motion.p
               variants={textRevealVariants}
-              className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-6"
+              className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-sub-above)] mb-6"
             >
               {h.heroEyebrow}
             </motion.p>
@@ -145,30 +154,33 @@ export default function Hero({ dict, locale }: Props) {
               >
                 {h.heroStat}
               </p>
-              <p className="text-xs text-slate-400 mt-1">Amman, Jordan</p>
+              <p className="text-xs text-slate-400 mt-1">{h.heroLocation}</p>
             </div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-0 inset-x-0 flex justify-center pb-8"
-          variants={fadeRevealVariants}
-        >
-          <a
-            href="#overview"
-            aria-label={h.heroScrollLabel}
-            className="flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors group"
-          >
-            <span className="text-[10px] uppercase tracking-widest group-hover:text-[var(--color-accent)] transition-colors">
-              Scroll DOWN
-            </span>
-            <div className="animate-bounce mt-1">
-              <ArrowDown size={18} aria-hidden="true" className="group-hover:text-[var(--color-accent)] transition-colors" />
-            </div>
-          </a>
-        </motion.div>
       </div>
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-0 inset-x-0 flex justify-center pb-8"
+        variants={fadeRevealVariants}
+      >
+        <a
+          href="#overview"
+          aria-label={h.heroScrollLabel}
+          className="flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors group"
+        >
+          <span className="text-[10px] uppercase tracking-widest group-hover:text-[var(--color-accent)] transition-colors">
+            {h.heroScrollText}
+          </span>
+          <div className="animate-bounce mt-1">
+            <ArrowDown
+              size={18}
+              aria-hidden="true"
+              className="group-hover:text-[var(--color-accent)] transition-colors"
+            />
+          </div>
+        </a>
+      </motion.div>
     </motion.section>
   );
 }
