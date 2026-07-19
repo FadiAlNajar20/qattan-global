@@ -12,6 +12,16 @@ export interface Stat {
   suffix?: string;
 }
 
+export interface StatCard {
+  id: number;
+  icon: string;
+  target: number;
+  prefix: string;
+  suffix: string;
+  title: string;
+  description: string;
+}
+
 export interface TimelineMilestone {
   year: string;
   title: string;
@@ -86,14 +96,18 @@ export interface Dictionary {
     heroSecondary: string;
     heroEst: string;
     heroStat: string;
+    heroLocation: string;
     heroScrollLabel: string;
+    heroScrollText: string;
     overviewEyebrow: string;
     overviewTitle: string;
     overviewBody: string;
     stats: Stat[];
+    statsCards: StatCard[];
     missionEyebrow: string;
     missionTitle: string;
     missionBody: string;
+    missionCta: string;
     visionEyebrow: string;
     visionTitle: string;
     visionPoints: string[];

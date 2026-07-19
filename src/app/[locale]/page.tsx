@@ -57,6 +57,7 @@ export default async function HomePage({
         eyebrow={h.overviewEyebrow}
         title={h.overviewTitle}
         description={h.overviewBody}
+        stats={h.statsCards}
       />
 
       {/* 2. IndustriesSection (Bento Grid) - Moved up for immediate commercial impact */}
@@ -96,6 +97,7 @@ export default async function HomePage({
         missionEyebrow={h.missionEyebrow}
         missionTitle={h.missionTitle}
         missionBody={h.missionBody}
+        missionCta={h.missionCta}
         visionEyebrow={h.visionEyebrow}
         visionTitle={h.visionTitle}
         visionPoints={h.visionPoints}
