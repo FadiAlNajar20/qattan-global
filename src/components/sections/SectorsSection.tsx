@@ -45,8 +45,8 @@ const sectorConfig: Record<
     span: "lg:col-span-1",
   },
   Home: {
-    image: "/images/home-appliances.webp",
-    id: "home-appliances",
+    image: "/images/shark-ninja.webp",
+    id: "shark-ninja",
     span: "lg:col-span-1",
   },
   Sparkles: {
