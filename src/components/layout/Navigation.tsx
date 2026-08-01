@@ -27,7 +27,10 @@ export default function Navigation({ dict, locale }: Props) {
   const altPath = pathname.replace(`/${locale}`, `/${altLocale}`);
 
   // Determine if the navigation should force the solid/light-background theme
-  const isLightPage = pathname.includes("/contact");
+  const isLightPage =
+    pathname.includes("/contact") ||
+    pathname.includes("/about") ||
+    pathname.includes("/global-partnerships");
   const isSolidTheme = scrolled || isLightPage;
 
   // Scroll detection
@@ -64,9 +67,9 @@ export default function Navigation({ dict, locale }: Props) {
 
   const navItems = [
     // { label: dict.nav.home, href: `/${locale}` },
-    // { label: dict.nav.about, href: `/${locale}/about` },
     // { label: dict.nav.history, href: `/${locale}/history` },
-    { label: dict.nav.brands, href: `/${locale}/brands` },
+    { label: dict.nav.brands, href: `/${locale}/global-partnerships` },
+    { label: dict.nav.about, href: `/${locale}/about` },
     // { label: dict.nav.sectors, href: `/${locale}/sectors` },
     // { label: dict.nav.partners, href: `/${locale}/partners` },
     // { label: dict.nav.gallery, href: `/${locale}/gallery` },
@@ -102,11 +105,13 @@ export default function Navigation({ dict, locale }: Props) {
               <Image
                 src="/images/logo.webp"
                 alt="Qattan Global"
-                width={160}
-                height={48}
+                width={100}
+                height={50}
                 priority
+                loading="eager"
+                style={{ width: "auto", height: "auto" }}
                 className={[
-                  "w-auto h-auto transition-all duration-300",
+                  "transition-all duration-300",
                   !isSolidTheme ? "brightness-0 invert" : "",
                 ].join(" ")}
               />
@@ -240,7 +245,8 @@ export default function Navigation({ dict, locale }: Props) {
                   alt="Qattan Global"
                   width={130}
                   height={40}
-                  className="h-8 w-auto"
+                  style={{ width: "auto" }}
+                  className="h-8"
                 />
                 <button
                   onClick={() => setMenuOpen(false)}

@@ -27,13 +27,13 @@ export default function CTABanner({ locale, title, body, button }: Props) {
       <Container className="section-spacing text-center">
         <FadeIn>
           <div className="max-w-2xl mx-auto space-y-6">
-            <h2 className="font-bold text-[clamp(1.75rem, 3.5vw, 2.75rem)] text-balance leading-tight">
+            <h2 className="font-bold text-[clamp(1.5rem,3.5vw,2.25rem)] text-balance leading-tight">
               {title}
             </h2>
             <p className="text-base leading-relaxed">{body}</p>
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-4 bg-slate-900 text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-amber-500 transition-colors duration-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-4 bg-[var(--color-bg-secondary)] text-[var(--color-text-primary)] text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-[var(--color-accent)] transition-colors duration-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2"
             >
               <span>{button}</span>
               <ArrowRight size={16} aria-hidden="true" className="icon-dir" />

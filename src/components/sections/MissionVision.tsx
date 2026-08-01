@@ -74,23 +74,23 @@ export default function MissionVision({
 
   return (
     <motion.section
-      className="relative overflow-hidden bg-[var(--color-bg-light-dim)] dark:bg-slate-950 py-24 lg:py-32"
+      className="relative overflow-hidden bg-[var(--color-bg-light)] py-24 lg:py-32"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-120px" }}
     >
       {/* Ultra-faint radial ambient glows */}
-      <div className="absolute top-[-20%] start-1/2 -translate-x-1/2 w-full max-w-5xl h-[800px] pointer-events-none bg-amber-500/5 blur-[120px] rounded-[100%]" />
+      <div className="absolute top-[-20%] start-1/2 -translate-x-1/2 w-full max-w-5xl h-[800px] pointer-events-none bg-[var(--color-accent)]/5 blur-[120px] rounded-[100%]" />
 
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
           {/* Left Column: Editorial Mission Statement (lg:col-span-5) */}
           <div className="lg:col-span-5 lg:sticky lg:top-28 h-fit">
             <motion.div variants={leftVariants}>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-500/90 mb-6 block">
+              <span className="text-[var(--color-text-sub-above)] font-semibold tracking-widest uppercase text-xs mb-4">
                 {missionEyebrow}
               </span>
-              <h2 className="text-3xl lg:text-4xl font-serif text-slate-900 dark:text-slate-50 tracking-tight leading-[1.1] mb-8 text-balance">
+              <h2 className="text-3xl lg:text-4xl font-serif text-[var(--color-text-dark)] tracking-tight leading-[1.1] mb-8 text-balance">
                 <span className="font-light block">
                   {splitTitle[0] || missionTitle}
                 </span>
@@ -100,14 +100,14 @@ export default function MissionVision({
                   </span>
                 )}
               </h2>
-              <p className="text-base lg:text-lg font-sans leading-relaxed text-slate-600 dark:text-slate-400 mb-12">
+              <p className="text-base lg:text-lg font-sans leading-relaxed text-[var(--color-text-muted)] mb-12">
                 {missionBody}
               </p>
 
               {missionCta && (
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-slate-900 dark:text-slate-50 hover:text-amber-500 dark:hover:text-amber-500 transition-colors group"
+                  className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[var(--color-text-dark)] hover:text-[var(--color-accent)] transition-colors group"
                 >
                   {missionCta}
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1 rtl:group-hover:-translate-y-1" />
@@ -119,14 +119,14 @@ export default function MissionVision({
           {/* Right Column: Dynamic Vision Canvas (lg:col-span-7) */}
           <div className="lg:col-span-7">
             <motion.div variants={rightHeaderVariants}>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-500/90 mb-6 block">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]/90 mb-6 block">
                 {visionEyebrow}
               </span>
-              <h2 className="text-2xl lg:text-3xl font-serif text-slate-900 dark:text-slate-50 tracking-tight leading-tight mb-14 text-balance">
+              <h2 className="text-2xl lg:text-3xl font-serif text-[var(--color-text-dark)] tracking-tight leading-tight mb-14 text-balance">
                 {firstVisionPart}{" "}
                 <span className="relative inline-block pb-1">
                   {lastVisionWord}
-                  <span className="absolute start-0 bottom-0 w-full h-[3px] bg-amber-500/80 rounded-full" />
+                  <span className="absolute start-0 bottom-0 w-full h-[3px] bg-[var(--color-accent)]/80 rounded-full" />
                 </span>
               </h2>
             </motion.div>
@@ -142,20 +142,20 @@ export default function MissionVision({
                   <motion.li
                     key={num}
                     variants={cardVariants}
-                    className="group relative overflow-hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 p-8 rounded-2xl transition-all duration-500 ease-out hover:bg-white dark:hover:bg-slate-900 hover:border-slate-300/80 dark:hover:border-slate-700/80 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/20 dark:hover:shadow-black/20"
+                    className="group relative overflow-hidden bg-[var(--color-bg-light)]/80 backdrop-blur-md border border-[var(--color-border-light)]/60  p-8 rounded-2xl transition-all duration-500 ease-out hover:bg-[var(--color-bg-light)] hover:border-slate-300/80 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/20"
                   >
                     {/* Watermarked Narrative Depth */}
-                    <div className="absolute bottom-[-10%] end-[-5%] text-[8rem] leading-none font-serif font-bold text-slate-100 dark:text-slate-800/50 opacity-50 select-none pointer-events-none transition-transform duration-700 ease-out group-hover:scale-[1.15] group-hover:-rotate-6 group-hover:text-slate-200/60 dark:group-hover:text-slate-800/80">
+                    <div className="absolute bottom-[-10%] end-[-5%] text-[8rem] leading-none font-serif font-bold text-[var(--color-text-primary)] opacity-50 select-none pointer-events-none transition-transform duration-700 ease-out group-hover:scale-[1.15] group-hover:-rotate-6 group-hover:text-[var(--color-text-secondary)]/60">
                       {num}
                     </div>
 
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 mb-3">
-                        <span className="text-amber-500 font-mono text-sm font-semibold tracking-widest">
+                        <span className="text-[var(--color-accent)] font-mono text-sm font-semibold tracking-widest">
                           [{num}]
                         </span>
                       </div>
-                      <p className="text-base lg:text-lg font-sans leading-relaxed text-slate-600 dark:text-slate-400">
+                      <p className="text-base lg:text-lg font-sans leading-relaxed text-[var(--color-text-muted)]">
                         {point}
                       </p>
                     </div>

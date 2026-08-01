@@ -140,7 +140,7 @@ network plays a crucial role in meeting the needs of customers, from
 retail shoppers to large-scale businesses.. . Human Resources:
 Recognizing the importance of human capital in achieving success, Qattan
 Group places significant emphasis on employee development. With a
-workforce of 1,000 employees, the company invests in training programs
+workforce of 500 employees, the company invests in training programs
 to equip its staff with the skills required to deliver exceptional
 customer service and maintain operational excellence.
 

@@ -127,7 +127,7 @@ export default function GalleryGrid({
             <button
               onClick={close}
               aria-label={closeLabel}
-              className="absolute top-4 end-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              className="absolute top-4 end-4 w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-bg-light)]/10 hover:bg-[var(--color-bg-light)]/20 text-[var(--color-text-primary)] transition-colors"
             >
               <X size={20} aria-hidden="true" />
             </button>
@@ -135,7 +135,7 @@ export default function GalleryGrid({
             <button
               onClick={(e) => { e.stopPropagation(); isRtl ? next() : prev(); }}
               aria-label={prevLabel}
-              className="absolute start-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              className="absolute start-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-bg-light)]/10 hover:bg-[var(--color-bg-light)]/20 text-[var(--color-text-primary)] transition-colors"
             >
               <ChevronLeft size={22} aria-hidden="true" className="icon-dir" />
             </button>
@@ -143,14 +143,14 @@ export default function GalleryGrid({
             <button
               onClick={(e) => { e.stopPropagation(); isRtl ? prev() : next(); }}
               aria-label={nextLabel}
-              className="absolute end-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              className="absolute end-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-bg-light)]/10 hover:bg-[var(--color-bg-light)]/20 text-[var(--color-text-primary)] transition-colors"
             >
               <ChevronRight size={22} aria-hidden="true" className="icon-dir" />
             </button>
 
             {/* Counter */}
             <div className="absolute bottom-4 inset-x-0 text-center">
-              <span className="text-xs text-white/60 tabular-nums">
+              <span className="text-xs text-[var(--color-text-primary)]/60 tabular-nums">
                 {lightboxIndex + 1} / {images.length}
               </span>
             </div>

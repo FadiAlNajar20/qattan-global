@@ -7,7 +7,6 @@ import { motion, Variants } from "framer-motion";
 import {
   ShoppingBag,
   Package,
-  Truck,
   Globe,
   Home,
   Sparkles,
@@ -19,7 +18,6 @@ import type { Sector } from "@/types";
 const iconMap: Record<string, React.ElementType> = {
   ShoppingBag,
   Package,
-  Truck,
   Globe,
   Home,
   Sparkles,
@@ -41,11 +39,6 @@ const sectorConfig: Record<
     id: "wholesale",
     span: "lg:col-span-1",
   },
-  Truck: {
-    image: "/images/distribution.webp",
-    id: "distribution",
-    span: "lg:col-span-2",
-  },
   Globe: {
     image: "/images/duty-free.webp",
     id: "duty-free",
@@ -65,7 +58,7 @@ const sectorConfig: Record<
   Star: {
     image: "/images/proprietary-brands.webp",
     id: "proprietary-brands",
-    span: "lg:col-span-2",
+    span: "lg:col-span-4",
   },
 };
 
@@ -118,7 +111,7 @@ export default function SectorsSection({ eyebrow, title, sectors }: Props) {
     >
       <Container>
         <motion.div variants={headerVariants} className="max-w-3xl mb-16">
-          <p className="text-amber-500 font-semibold tracking-wider uppercase text-sm mb-4">
+          <p className="text-[var(--color-accent)] font-semibold tracking-wider uppercase text-sm mb-4">
             {eyebrow || "WHAT WE DO"}
           </p>
           <h2 className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold tracking-tight">
@@ -147,11 +140,11 @@ export default function SectorsSection({ eyebrow, title, sectors }: Props) {
                 onClick={() =>
                   setExpandedIndex(expandedIndex === index ? null : index)
                 }
-                className={`relative group overflow-hidden rounded-2xl border border-slate-800/50 bg-slate-900 cursor-pointer ${config.span}`}
+                className={`relative group overflow-hidden rounded-2xl border border-[var(--color-border)]/50 bg-[var(--color-bg-secondary)] cursor-pointer ${config.span}`}
               >
                 {/* <Link
                   href={`/${locale}/sectors#${config.id}`}
-                  className="relative block w-full h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-inset rounded-2xl"
+                  className="relative block w-full h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-inset rounded-2xl"
                 > */}
                 {/* Background Image with Cinematic Zoom */}
                 <Image
@@ -160,6 +153,7 @@ export default function SectorsSection({ eyebrow, title, sectors }: Props) {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                   className={`object-cover transition-transform duration-700 ease-out ${expandedIndex === index ? "scale-105" : "group-hover:scale-105"}`}
+                  priority={index <= 1}
                 />
 
                 {/* Gradient Overlay for Text Contrast */}
@@ -174,13 +168,13 @@ export default function SectorsSection({ eyebrow, title, sectors }: Props) {
                   >
                     {/* Icon & Title */}
                     <div className="flex items-center gap-4 mb-3 sm:mb-4">
-                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-amber-500/10 border border-amber-500/20 backdrop-blur-sm">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 backdrop-blur-sm">
                         <Icon
-                          className="w-6 h-6 text-amber-500"
+                          className="w-6 h-6 text-[var(--color-accent)]"
                           strokeWidth={1.5}
                         />
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                      <h3 className="text-xl sm:text-2xl font-bold text-[var(--color-text-primary)] tracking-tight">
                         {sector.title}
                       </h3>
                     </div>
@@ -190,10 +184,10 @@ export default function SectorsSection({ eyebrow, title, sectors }: Props) {
                       className={`grid transition-all duration-500 ease-in-out ${expandedIndex === index ? "grid-rows-[1fr]" : "grid-rows-[0fr] group-hover:grid-rows-[1fr]"}`}
                     >
                       <div className="overflow-hidden">
-                        <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                        <p className="text-[var(--color-text-secondary)] text-sm sm:text-base leading-relaxed mb-6">
                           {sector.description}
                         </p>
-                        {/* <span className="inline-flex items-center gap-2 text-amber-500 font-semibold text-sm tracking-wide uppercase">
+                        {/* <span className="inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold text-sm tracking-wide uppercase">
                             Explore Sector
                             <ArrowRight
                               size={16}

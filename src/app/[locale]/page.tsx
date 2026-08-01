@@ -11,8 +11,8 @@ import BrandsSection from "@/components/sections/BrandsSection";
 import DifferentiatorsSection from "@/components/sections/DifferentiatorsSection";
 import EvolutionSection from "@/components/sections/EvolutionSection";
 import MissionVision from "@/components/sections/MissionVision";
-import ValuesSection from "@/components/sections/ValuesSection";
-import RetailersTrustSection from "@/components/sections/RetailersTrustSection";
+// import ValuesSection from "@/components/sections/ValuesSection";
+// import RetailersTrustSection from "@/components/sections/RetailersTrustSection";
 import CTABanner from "@/components/sections/CTABanner";
 
 export async function generateStaticParams() {
@@ -43,7 +43,7 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  
+
   const dict = getDictionary(locale);
   const h = dict.home;
 
@@ -102,19 +102,19 @@ export default async function HomePage({
         visionTitle={h.visionTitle}
         visionPoints={h.visionPoints}
       />
-      
-      <ValuesSection
+
+      {/* <ValuesSection
         eyebrow={h.valuesEyebrow}
         title={h.valuesTitle}
         values={h.values}
-      />
+      /> */}
 
       {/* 7. RetailersTrustSection (Trusted by Jordan's Leading Retailers) */}
-      <RetailersTrustSection
+      {/* <RetailersTrustSection
         eyebrow={h.partnersEyebrow}
         title={h.partnersTitle}
         description="Direct nationwide distribution infrastructure serving 500+ premium points of sale across the region."
-      />
+      /> */}
 
       {/* 8. CallToAction & RichFooter (Closing loop) */}
       <CTABanner

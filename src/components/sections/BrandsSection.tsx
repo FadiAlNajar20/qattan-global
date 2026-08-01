@@ -63,7 +63,7 @@ export default function BrandsSection({
   const filterBrands = brandLogos.slice(0, 10);
 
   return (
-    <motion.section 
+    <motion.section
       className="bg-[var(--color-bg-light-dim)] py-24 sm:py-32 overflow-hidden"
       initial="hidden"
       whileInView="visible"
@@ -83,7 +83,7 @@ export default function BrandsSection({
           </motion.div>
           <motion.div variants={headerVariants}>
             <Link
-              href={`/${locale}/brands`}
+              href={`/${locale}/global-partnerships`}
               className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-text-sub-above)] hover:text-[var(--color-accent-hover)] transition-colors group shrink-0 whitespace-nowrap"
             >
               <span>{ctaText}</span>
@@ -106,7 +106,7 @@ export default function BrandsSection({
               key={brand.name}
               variants={cardVariants}
               whileHover={{ scale: 1.02, rotate: 0 }}
-              className="bg-white border border-slate-100 rounded-xl p-6 flex items-center justify-center min-h-[140px] shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-slate-200/80 group"
+              className="bg-[var(--color-bg-light)] border border-[var(--color-border-light)] rounded-xl p-6 flex items-center justify-center min-h-[140px] shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-[var(--color-border-light)]/80 group"
             >
               <div className="relative w-full h-full flex items-center justify-center grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                 <Image
