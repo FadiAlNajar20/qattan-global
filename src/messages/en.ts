@@ -12,14 +12,14 @@ export const en: Dictionary = {
     home: "Home",
     about: "About",
     history: "History",
-    brands: "Brands",
+    brands: "Global Partnerships",
     sectors: "Sectors",
     partners: "Partners",
     gallery: "Gallery",
     contact: "Contact",
     openMenu: "Open navigation menu",
     closeMenu: "Close navigation menu",
-    qattanglobalStore: "Qattan Global Store",
+    qattanglobalStore: "Our online Store",
   },
   home: {
     heroEyebrow: "Est. 1951 — Amman, Jordan",
@@ -27,7 +27,7 @@ export const en: Dictionary = {
     heroSubtitle:
       "From a family-owned perfume boutique to a diversified corporate group — Qattan Global has been shaping Jordanian commerce for over 70 years.",
     heroPrimary: "Explore our story",
-    heroSecondary: "Our brands",
+    heroSecondary: "Global Partnerships",
     heroEst: "Established",
     heroStat: "1951",
     heroLocation: "Amman, Jordan",
@@ -40,7 +40,7 @@ export const en: Dictionary = {
     stats: [
       { value: "1951", label: "Year founded" },
       { value: "70+", label: "Years of experience" },
-      { value: "1,000", label: "Employees" },
+      { value: "500", label: "Employees" },
       { value: "6,500", label: "m² of warehouse space", suffix: "m²" },
     ],
     statsCards: [
@@ -130,34 +130,39 @@ export const en: Dictionary = {
     evolution: {
       eyebrow: "OUR JOURNEY",
       title: "Seven decades of evolution.",
-      description: "A testament to resilience and vision. Witness how Qattan transitioned from a 1951 pioneering enterprise to a modern corporate empire shaping the regional commercial landscape.",
+      description:
+        "A testament to resilience and vision. Witness how Qattan transitioned from a 1951 pioneering enterprise to a modern corporate empire shaping the regional commercial landscape.",
       eras: [
         {
           year: "1951 — The Genesis",
           tag: "The Foundation",
           title: "A Legacy Built on Absolute Trust",
-          description: "Established in Amman, Jordan, laying down the foundational pillars of uncompromising commercial integrity, initiating pioneering trading loops and distribution routes across the region."
+          description:
+            "Established in Amman, Jordan, laying down the foundational pillars of uncompromising commercial integrity, initiating pioneering trading loops and distribution routes across the region.",
         },
         {
           year: "The Era of Expansion",
           tag: "Global Partnerships",
           title: "Securing World-Class Alliances",
-          description: "Accelerating market dominance by capturing highly coveted exclusive agency rights for elite international fashion houses, luxury cosmetics, and premium consumer goods."
+          description:
+            "Accelerating market dominance by capturing highly coveted exclusive agency rights for elite international fashion houses, luxury cosmetics, and premium consumer goods.",
         },
         {
           year: "The Modern Conglomerate (Present)",
           tag: "Integrated System",
           title: "A Dynamic Multi-Sector Ecosystem",
-          description: "Operating today as a highly integrated multi-corporate force. Synchronizing proprietary brands, high-tier retail, advanced logistics, and robust wholesale commercial structures."
-        }
-      ]
+          description:
+            "Operating today as a highly integrated multi-corporate force. Synchronizing proprietary brands, high-tier retail, advanced logistics, and robust wholesale commercial structures.",
+        },
+      ],
     },
     ecosystemEyebrow: "Our Ecosystem",
     ecosystemTitle: "One group. Many sectors.",
     ecosystemBody:
       "Qattan Global operates across interconnected business verticals, creating a comprehensive commercial ecosystem that serves consumers and businesses alike.",
-    sectorsEyebrow: "What we do",
-    sectorsTitle: "Industries we serve.",
+    sectorsEyebrow:
+      "From a single focus to a comprehensive commercial ecosystem.",
+    sectorsTitle: "Business Evolution",
     brandsEyebrow: "Our portfolio",
     brandsTitle: "Brands we own, co-own, and represent.",
     brandsBody:
@@ -167,27 +172,32 @@ export const en: Dictionary = {
     partnersTitle: "Trusted by Jordan's leading retailers.",
     whyEyebrow: "Why Qattan Global",
     whyTitle: "What sets us apart.",
-    whyBody: "We are not just participants in the market; we are market makers. By bridging heritage with advanced infrastructure, we offer unparalleled operational synergy that drives growth across retail, wholesale, and distribution.",
+    whyBody:
+      "We are not just participants in the market; we are market makers. By bridging heritage with advanced infrastructure, we offer unparalleled operational synergy that drives growth across retail, wholesale, and distribution.",
     whyPoints: [
       {
         number: "01",
         title: "A Legacy Since 1951",
-        description: "Over seven decades of unbroken market trust, transitioning from a pioneering commerce foundation into a multi-sector regional powerhouse.",
+        description:
+          "Over seven decades of unbroken market trust, transitioning from a pioneering commerce foundation into a multi-sector regional powerhouse.",
       },
       {
         number: "02",
         title: "Full-Scale Integration",
-        description: "We don't just represent; we control the full supply cycle. Integrating world-class logistics, robust wholesale distribution, and premium frontline retail under one cohesive ecosystem.",
+        description:
+          "We don't just represent; we control the full supply cycle. Integrating world-class logistics, robust wholesale distribution, and premium frontline retail under one cohesive ecosystem.",
       },
       {
         number: "03",
         title: "Exclusive Portfolio Rights",
-        description: "The trusted regional custodian for prestigious international fashion houses, luxury cosmetics, and industry-leading appliance brands.",
+        description:
+          "The trusted regional custodian for prestigious international fashion houses, luxury cosmetics, and industry-leading appliance brands.",
       },
       {
         number: "04",
         title: "Gateway to the Levant",
-        description: "Deeply rooted infrastructure spanning major commercial hubs in Jordan—from Amman to the Aqaba special economic zone—serving both local and regional markets with absolute precision.",
+        description:
+          "Deeply rooted infrastructure spanning major commercial hubs in Jordan—from Amman to the Aqaba special economic zone—serving both local and regional markets with absolute precision.",
       },
     ],
     galleryEyebrow: "Gallery",
@@ -255,10 +265,269 @@ export const en: Dictionary = {
     stats: [
       { value: "1951", label: "Year founded" },
       { value: "70+", label: "Years of experience" },
-      { value: "1,000", label: "Employees" },
+      { value: "500", label: "Employees" },
       { value: "2,500", label: "m² — Amman warehouse", suffix: "m²" },
       { value: "4,000", label: "m² — Aqaba SEZ warehouse", suffix: "m²" },
     ],
+  },
+  aboutRedesign: {
+    hero: {
+      eyebrow: "ABOUT QATTAN GLOBAL",
+      headline: "Seventy years of building trust",
+      supportingText:
+        "From a single perfume counter in Amman to a diversified group representing world-class brands, our story is one of family, patience, and quiet ambition.",
+      primaryCta: "Discover our journey",
+      secondaryCta: "Explore our brands",
+      stats: [
+        {
+          number: "3",
+          title: "Locations",
+          subtitle: "On-the-ground presence",
+        },
+        {
+          number: "2",
+          title: "Languages spoken",
+          subtitle: "Dedicated team of experts",
+        },
+        {
+          number: "75+",
+          title: "Years of Experience",
+          subtitle: "Across multiple industries",
+        },
+      ],
+    },
+    overview: {
+      introduction:
+        "Founded in Amman, Jordan, Qattan Global began as a family-owned business specializing in perfumes and cosmetics. Today, it stands as a pillar of Jordanian commerce, blending heritage with modern enterprise.",
+      facts: [
+        "Since 1951",
+        "500 employees",
+        "Retail, wholesale, and distribution",
+        "Amman and Aqaba operations",
+      ],
+    },
+    journey: [
+      {
+        year: "1951",
+        title: "The Foundation",
+        description:
+          "Qattan is founded in Amman as a family-owned business specializing in perfumes and cosmetics, building deep customer trust through a commitment to authenticity and original products.",
+      },
+      {
+        year: "1983",
+        title: "Second Generation Leadership",
+        description:
+          "Leadership transitions to the second generation, preserving the company's strong reputation while expanding its presence in Jordan across Amman and Aqaba, adding wholesale to its retail roots.",
+      },
+      {
+        year: "2000",
+        title: "Home Appliance Expansion",
+        description:
+          "The company expands into the home appliance sector, becoming a key supplier to major Jordanian retailers and an official distributor for numerous international brands.",
+      },
+      {
+        year: "Aqaba Expansion",
+        title: "Duty-Free Operations",
+        description:
+          "Qattan opens spacious branches in Aqaba's premier shopping centers, introducing duty-free operations and expanding its portfolio to include electrical appliances, luxury perfumes, cosmetics, and men's fashion.",
+      },
+      {
+        year: "Today",
+        title: "A Diversified Group",
+        description:
+          "Operating across multiple sectors, Qattan Global continues to expand, developing proprietary brands alongside exclusive distribution rights for prestigious international names.",
+      },
+    ],
+    businessEvolution: [
+      {
+        title: "Perfumes & Cosmetics",
+        description:
+          "The foundation of our retail legacy, offering original products from leading global brands.",
+      },
+      {
+        title: "Retail",
+        description:
+          "Spacious, premium showrooms across Amman and Aqaba providing superior consumer experiences.",
+      },
+      {
+        title: "Wholesale",
+        description:
+          "A robust commercial structure supplying major retailers and key accounts across Jordan.",
+      },
+      {
+        title: "Home Appliances",
+        description:
+          "A comprehensive portfolio of electronics and appliances for modern living.",
+      },
+      {
+        title: "Duty-Free",
+        description:
+          "Exclusive product ranges and premium shopping experiences in Aqaba's Special Economic Zone.",
+      },
+      {
+        title: "Men's Fashion",
+        description: "Curated collections from world-renowned fashion houses.",
+      },
+      {
+        title: "Proprietary Brands",
+        description:
+          "In-house developed brands offering trusted quality for regional markets.",
+      },
+    ],
+    currentScale: {
+      title: "Qattan Global",
+      subtitle: "Today",
+      description:
+        "We bridge heritage with modern infrastructure, creating a comprehensive commercial ecosystem that encompasses retail, wholesale, and logistics across Jordan.",
+      coreOperations: "Core Operations",
+      workforceLabel: "Workforce",
+      employees: "500",
+      employeesLabel: "Employees",
+      amman: "2,500 m²",
+      ammanLabel: "Amman storage facilities",
+      aqaba: "4,000 m²",
+      aqabaLabel: "Aqaba storage facilities",
+      operations: ["Retail", "Wholesale"],
+    },
+    brandPreview: {
+      introduction:
+        "Our ecosystem encompasses a broad portfolio reflecting our commercial expertise—from in-house labels to world-renowned international partners.",
+      brandDetails:
+        "Qattan Global is proud to feature {brandName} as part of our premium brand ecosystem. We ensure the highest standards of distribution and retail excellence to bring this distinguished brand to the regional market.",
+      categories: [
+        // {
+        //   title: "Proprietary Brands",
+        //   brands: ["Jefan", "Farcome", "Clivin"],
+        // },
+        // {
+        //   title: "Co-owned Brands",
+        //   brands: ["English Home"],
+        // },
+        {
+          title: "Exclusive Agents in Jordan",
+          brands: [
+            {
+              name: "Shark Ninja",
+              url: "https://cdn.allcouponat.com/ar/2025/05/04183727/%D9%83%D9%88%D8%AF-%D8%AE%D8%B5%D9%85-%D8%B4%D8%A7%D8%B1%D9%83-%D9%86%D9%8A%D9%86%D8%AC%D8%A7-Shark-NINJA-logo.png",
+            },
+            {
+              name: "Apex",
+              url: "https://apexeg.co/wp-content/uploads/2025/08/Apex-scaled.jpg",
+            },
+            {
+              name: "Kenwood",
+              url: "https://qattanglobal.com/cdn/shop/collections/kenwood_logo_square.webp?v=1780572964",
+            },
+            {
+              name: "English Home",
+              url: "https://images.seeklogo.com/logo-png/43/1/english-home-logo-png_seeklogo-434961.png",
+            },
+            {
+              name: "Pierre Cardin",
+              url: "https://qattanglobal.com/cdn/shop/collections/PIERRE-CARDIN-LOGO_232606eb-a3e3-47c6-adad-390a339e2946.webp?v=1777130735",
+            },
+            {
+              name: "Balmain",
+              url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmz_0I5ruwBJJRKK3lXbtq7rTdMLX6M9PZHdqOad9Xz0l6SxJC9FJYdxkt&s=10",
+            },
+            {
+              name: "Louis Féraud",
+              url: "https://cdn.shopify.com/oxygen-v2/1337/1964/4152/3117166/build/_assets/fulllogo-PDDA6H6L.svg",
+            },
+            {
+              name: "Jefan",
+              url: "https://s3.amazonaws.com/imcnonprodva/cms/QA/exhibitor_portal/logo_directory_detail/exhibitorlogo_accountid_105717_MicrosoftTeams-image_(4).png",
+            },
+            {
+              name: "Farcome",
+              url: "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/420a8535747466fe2dd80558bd7baf4a",
+            },
+            {
+              name: "Clivin",
+              url: "https://logos-world.net/wp-content/uploads/2020/05/Calvin-Klein-Logo.jpg",
+            },
+            {
+              name: "Brooks Brothers",
+              url: "https://assets.sandsresortsmacao.cn/content/venetianmacao/shopping/shoppes/fashion-men/brooks-brothers/logo_500x455.jpg",
+            },
+          ],
+        },
+        // {
+        //   title: "Exclusive Distribution Relationships",
+        //   brands: ["Brooks Brothers", "Kite Kate"],
+        // },
+      ],
+      cta: "Explore Our Brands",
+    },
+    mission: {
+      headline: "Our Mission",
+      paragraph:
+        "We provide premium products and services that enhance the lives of our customers. Driven by a commitment to authenticity, innovation, and excellence, we build lasting relationships, uphold the highest standards of quality, and continuously pursue regional and global expansion.",
+    },
+    vision: [
+      {
+        number: "01",
+        title: "Expansion",
+        description:
+          "Continue growth and market penetration both locally and regionally.",
+      },
+      {
+        number: "02",
+        title: "Brand Development",
+        description:
+          "Enhance the presence of proprietary brands and expand exclusive partnerships.",
+      },
+      {
+        number: "03",
+        title: "Customer Experience",
+        description:
+          "Provide superior customer service and a premium shopping experience.",
+      },
+    ],
+    values: [
+      {
+        title: "Trust and Authenticity",
+        description:
+          "Offering only genuine products and maintaining transparent practices since 1951.",
+      },
+      {
+        title: "Quality and Excellence",
+        description:
+          "Providing the highest quality in all product lines and services.",
+      },
+      {
+        title: "Innovation and Expansion",
+        description:
+          "Embracing new opportunities and staying ahead of industry trends.",
+      },
+      {
+        title: "Customer-Centric Approach",
+        description:
+          "Fulfilling customer needs and exceeding expectations across all channels.",
+      },
+      {
+        title: "Heritage and Legacy",
+        description:
+          "Rooted in traditions of honesty, respect, and dedication.",
+      },
+    ],
+    infrastructure: {
+      title: "The Foundation Behind Our Reach",
+      description:
+        "Our robust infrastructure and dedicated workforce are the engines of our growth. With expansive storage facilities in Amman and Aqaba, our distribution network serves diverse clientele seamlessly. We invest heavily in our 500 employees through continuous training, ensuring operational excellence across retail, wholesale, and logistics.",
+    },
+    sisterCompany: {
+      title: "Our Sister Company",
+      name: "Juma For Trading",
+      description: "A trusted partner within our broader corporate network.",
+    },
+    finalCta: {
+      headline: "Partner with Qattan Group",
+      supportingText:
+        "We look forward to the opportunity to work with you and shape the future of commerce together.",
+      primaryCta: "Get in Touch",
+      secondaryCta: "Explore Our Brands",
+    },
   },
   history: {
     heroEyebrow: "Our history",
@@ -305,7 +574,7 @@ export const en: Dictionary = {
         label: "m² in Aqaba Special Economic Zone",
         suffix: "m²",
       },
-      { value: "1,000", label: "Employees across the group" },
+      { value: "500", label: "Employees across the group" },
       { value: "1951", label: "Year founded" },
     ],
   },
@@ -372,12 +641,6 @@ export const en: Dictionary = {
         description:
           "Supplying a broad network of Jordanian retailers and businesses with high-quality products at competitive terms, backed by reliable logistics.",
         icon: "Package",
-      },
-      {
-        title: "Distribution",
-        description:
-          "An official distributor for numerous international brands, operating a robust distribution network that caters to diverse clients across local markets.",
-        icon: "Truck",
       },
       {
         title: "Duty-Free",

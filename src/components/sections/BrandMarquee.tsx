@@ -26,7 +26,7 @@ function LogoRow({
         {double.map((brand, i) => (
           <div
             key={`${brand.name}-${i}`}
-            className="flex-shrink-0 flex items-center justify-center w-32 h-16 bg-white rounded-lg border border-[var(--color-border-light)] px-4"
+            className="flex-shrink-0 flex items-center justify-center w-32 h-16 bg-[var(--color-bg-light)] rounded-lg border border-[var(--color-border-light)] px-4"
           >
             <Image
               src={brand.url}

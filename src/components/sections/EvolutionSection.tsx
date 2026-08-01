@@ -21,21 +21,25 @@ interface Props {
 
 const leftVariants: Variants = {
   hidden: { clipPath: "inset(100% 0 0 0)", y: 40, opacity: 0 },
-  visible: { 
+  visible: {
     clipPath: "inset(-20% 0 -20% 0)",
-    y: 0, 
+    y: 0,
     opacity: 1,
-    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } 
+    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
 const nodeVariants: Variants = {
-  hidden: (isRtl: boolean) => ({ opacity: 0, x: isRtl ? -60 : 60, filter: "blur(12px)" }),
-  visible: { 
-    opacity: 1, 
-    x: 0, 
+  hidden: (isRtl: boolean) => ({
+    opacity: 0,
+    x: isRtl ? -60 : 60,
+    filter: "blur(12px)",
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
     filter: "blur(0px)",
-    transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] } 
+    transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -55,20 +59,20 @@ export default function EvolutionSection({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column (Sticky Headers) */}
           <div className="lg:col-span-4 relative">
-            <motion.div 
+            <motion.div
               className="lg:sticky lg:top-32 h-fit"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-120px" }}
               variants={leftVariants}
             >
-              <p className="text-amber-500 font-semibold tracking-widest uppercase text-xs mb-4">
+              <p className="text-[var(--color-text-sub-above)] font-semibold tracking-widest uppercase text-xs mb-4">
                 {eyebrow}
               </p>
-              <h2 className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold text-slate-900 tracking-tight leading-[1.1] mb-6">
+              <h2 className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold text-[var(--color-text-dark)] tracking-tight leading-[1.1] mb-6">
                 {title}
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed">
+              <p className="text-[var(--color-text-muted)] text-lg leading-relaxed">
                 {description}
               </p>
             </motion.div>
@@ -77,12 +81,10 @@ export default function EvolutionSection({
           {/* Right Column (Interactive Timeline Stream) */}
           <div className="lg:col-span-8 relative">
             {/* The Track Container */}
-            <div
-              className="relative ltr:border-l-2 rtl:border-r-2 border-slate-100 ltr:pl-8 md:ltr:pl-12 ltr:ml-4 rtl:pr-8 md:rtl:pr-12 rtl:mr-4"
-            >
+            <div className="relative ltr:border-l-2 rtl:border-r-2 border-[var(--color-border-light)] ltr:pl-8 md:ltr:pl-12 ltr:ml-4 rtl:pr-8 md:rtl:pr-12 rtl:mr-4">
               {/* The Glowing Progress Track - using viewport triggers */}
               <motion.div
-                className="absolute top-0 bottom-0 w-[2px] bg-gradient-to-b from-amber-500 to-amber-600 ltr:-left-[2px] rtl:-right-[2px] origin-top"
+                className="absolute top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#D4BA8A] to-[#D4BA8A] ltr:-left-[2px] rtl:-right-[2px] origin-top"
                 initial={{ scaleY: 0 }}
                 whileInView={{ scaleY: 1 }}
                 viewport={{ once: true, margin: "-120px" }}
@@ -128,8 +130,8 @@ function TimelineNode({ era, isLast }: { era: Era; isLast: boolean }) {
       <div
         className={`absolute top-2 -translate-y-1/2 rounded-full transition-all duration-300 ltr:-left-8 md:ltr:-left-12 ltr:-translate-x-[calc(50%+1px)] rtl:-right-8 md:rtl:-right-12 rtl:translate-x-[calc(50%+1px)] z-10 ${
           isInView
-            ? "bg-amber-500 w-5 h-5 ring-4 ring-amber-500/20"
-            : "bg-slate-200 w-4 h-4"
+            ? "bg-[var(--color-accent)] w-5 h-5 ring-4 ring-[var(--color-accent)]/20"
+            : "bg-[var(--color-border-light)] w-4 h-4"
         }`}
       />
 
@@ -141,20 +143,24 @@ function TimelineNode({ era, isLast }: { era: Era; isLast: boolean }) {
         }`}
       >
         <div className="flex items-center gap-3 mb-2">
-          <span className="inline-block text-xs font-semibold tracking-wider text-amber-500 uppercase">
+          <span className="inline-block text-xs font-semibold tracking-wider text-[var(--color-accent)] uppercase">
             {era.tag}
           </span>
-          <span className="w-1 h-1 rounded-full bg-slate-300" />
-          <span className="text-sm font-medium text-slate-500">{era.year}</span>
+          <span className="w-1 h-1 rounded-full bg-[var(--color-border-light)]" />
+          <span className="text-sm font-medium text-[var(--color-text-muted)]">
+            {era.year}
+          </span>
         </div>
         <h3
           className={`text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold mb-4 tracking-tight transition-colors duration-500 ${
-            isInView ? "text-slate-900" : "text-slate-600"
+            isInView
+              ? "text-[var(--color-text-dark)]"
+              : "text-[var(--color-text-muted)]"
           }`}
         >
           {era.title}
         </h3>
-        <p className="text-slate-600 leading-relaxed text-lg max-w-2xl">
+        <p className="text-[var(--color-text-muted)] leading-relaxed text-lg max-w-2xl">
           {era.description}
         </p>
       </div>

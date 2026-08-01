@@ -15,7 +15,7 @@ export default function NotFound() {
             className="mb-12 brightness-0 invert opacity-60"
             style={{ width: "auto", height: "auto" }}
           />
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-4">
+          <p className="text-8xl font-bold uppercase tracking-widest text-[var(--color-accent)] mb-4">
             404
           </p>
           <h1 className="font-bold text-white text-[clamp(1.5rem,3.5vw,2.25rem)] text-balance leading-tight mb-6">

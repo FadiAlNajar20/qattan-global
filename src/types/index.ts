@@ -173,6 +173,84 @@ export interface Dictionary {
     scaleTitle: string;
     stats: Stat[];
   };
+  aboutRedesign: {
+    hero: {
+      eyebrow: string;
+      headline: string;
+      supportingText: string;
+      primaryCta: string;
+      secondaryCta: string;
+      stats: {
+        number: string;
+        title: string;
+        subtitle: string;
+      }[];
+    };
+    overview: {
+      introduction: string;
+      facts: string[];
+    };
+    journey: {
+      year: string;
+      title: string;
+      description: string;
+    }[];
+    businessEvolution: {
+      title: string;
+      description: string;
+    }[];
+    currentScale: {
+      title: string;
+      subtitle: string;
+      description: string;
+      coreOperations: string;
+      workforceLabel: string;
+      employees: string;
+      employeesLabel: string;
+      amman: string;
+      ammanLabel: string;
+      aqaba: string;
+      aqabaLabel: string;
+      operations: string[];
+    };
+    brandPreview: {
+      introduction: string;
+      brandDetails: string;
+      categories: {
+        title: string;
+        brands: { name: string; url: string }[];
+      }[];
+      cta: string;
+    };
+    mission: {
+      headline: string;
+      paragraph: string;
+    };
+    vision: {
+      number: string;
+      title: string;
+      description: string;
+    }[];
+    values: {
+      title: string;
+      description: string;
+    }[];
+    infrastructure: {
+      title: string;
+      description: string;
+    };
+    sisterCompany: {
+      title: string;
+      name: string;
+      description: string;
+    };
+    finalCta: {
+      headline: string;
+      supportingText: string;
+      primaryCta: string;
+      secondaryCta: string;
+    };
+  };
   history: {
     heroEyebrow: string;
     heroTitle: string;

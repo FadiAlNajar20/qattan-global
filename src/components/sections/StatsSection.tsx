@@ -86,7 +86,12 @@ function CountUpNumber({
   );
 }
 
-export default function StatsSection({ eyebrow, title, description, stats }: Props) {
+export default function StatsSection({
+  eyebrow,
+  title,
+  description,
+  stats,
+}: Props) {
   const containerVariants: Variants = {
     hidden: {},
     visible: {
@@ -121,7 +126,7 @@ export default function StatsSection({ eyebrow, title, description, stats }: Pro
   return (
     <motion.section
       id="overview"
-      className="py-24"
+      className="py-24 bg-[var(--color-bg-light-dim)]"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-120px" }}
@@ -132,17 +137,28 @@ export default function StatsSection({ eyebrow, title, description, stats }: Pro
         {(eyebrow || title || description) && (
           <motion.div className="text-start max-w-5xl mb-16">
             {eyebrow && (
-              <motion.p variants={textRevealVariants} className="text-[var(--color-text-sub-above)] font-semibold tracking-widest uppercase text-sm mb-3">
+              <motion.p
+                variants={textRevealVariants}
+                className="text-[var(--color-text-sub-above)] font-semibold tracking-widest uppercase text-sm mb-3"
+              >
                 {eyebrow}
               </motion.p>
             )}
             {title && (
-              <motion.h2 variants={textRevealVariants} className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold mb-4">
+              <motion.h2
+                variants={textRevealVariants}
+                className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold mb-4"
+              >
                 {title}
               </motion.h2>
             )}
             {description && (
-              <motion.p variants={textRevealVariants} className="text-gray-400 leading-relaxed">{description}</motion.p>
+              <motion.p
+                variants={textRevealVariants}
+                className="text-[var(--color-text-muted)] leading-relaxed"
+              >
+                {description}
+              </motion.p>
             )}
           </motion.div>
         )}
@@ -152,32 +168,33 @@ export default function StatsSection({ eyebrow, title, description, stats }: Pro
           {stats.map((stat) => {
             const Icon = iconMap[stat.icon] || Calendar;
             return (
-            <motion.div
-              key={stat.id}
-              variants={cinematicRevealVariants}
-              className="group flex flex-col items-center text-center p-8 rounded-2xl bg-gray-50 border border-gray-200 transition-colors duration-300 hover:border-gray-500 hover:bg-gray-50/80"
-            >
-              {/* Icon Container */}
-              <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-amber-500/5 border border-amber-500/10 text-amber-500 mb-6 transition-all duration-300 group-hover:bg-amber-500/10 group-hover:border-amber-500/20 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] group-hover:scale-110">
-                <Icon className="w-8 h-8" strokeWidth={1.5} />
-              </div>
+              <motion.div
+                key={stat.id}
+                variants={cinematicRevealVariants}
+                className="group flex flex-col items-center text-center p-8 rounded-2xl bg-[var(--color-bg-light-dim)] border border-[var(--color-border-light)] transition-colors duration-300 hover:border-gray-500 hover:bg-[var(--color-bg-light-dim)]/80"
+              >
+                {/* Icon Container */}
+                <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[var(--color-accent)]/5 border border-[var(--color-accent)]/10 text-[var(--color-accent)] mb-6 transition-all duration-300 group-hover:bg-[var(--color-accent)]/10 group-hover:border-[var(--color-accent)]/20 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] group-hover:scale-110">
+                  <Icon className="w-8 h-8" strokeWidth={1.5} />
+                </div>
 
-              {/* Number */}
-              <div className="text-4xl font-bold mb-2 tracking-tight">
-                <CountUpNumber
-                  target={stat.target}
-                  prefix={stat.prefix}
-                  suffix={stat.suffix}
-                />
-              </div>
+                {/* Number */}
+                <div className="text-4xl font-bold mb-2 tracking-tight">
+                  <CountUpNumber
+                    target={stat.target}
+                    prefix={stat.prefix}
+                    suffix={stat.suffix}
+                  />
+                </div>
 
-              {/* Text */}
-              <h3 className="text-lg font-semibold mb-2">{stat.title}</h3>
-              <p className="text-sm text-gray-400 leading-relaxed max-w-[200px]">
-                {stat.description}
-              </p>
-            </motion.div>
-          )})}
+                {/* Text */}
+                <h3 className="text-lg font-semibold mb-2">{stat.title}</h3>
+                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed max-w-[200px]">
+                  {stat.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </motion.section>

@@ -55,14 +55,14 @@ export default function RetailersTrustSection({
           <div className="lg:col-span-4">
             <FadeIn>
               {eyebrow && (
-                <p className="text-amber-500/90 font-semibold tracking-widest uppercase text-xs mb-4">
+                <p className="text-[var(--color-text-sub-above)] font-semibold tracking-widest uppercase text-xs mb-4">
                   {eyebrow}
                 </p>
               )}
-              <h2 className="font-bold text-slate-900 text-[clamp(1.5rem,3.5vw,2.25rem)] tracking-tight leading-[1.1] mb-6">
+              <h2 className="font-bold text-[var(--color-text-dark)] text-[clamp(1.5rem,3.5vw,2.25rem)] tracking-tight leading-[1.1] mb-6">
                 {title}
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed">
+              <p className="text-[var(--color-text-muted)] text-lg leading-relaxed">
                 {description}
               </p>
             </FadeIn>
@@ -78,7 +78,7 @@ export default function RetailersTrustSection({
                 <motion.div
                   key={index}
                   variants={fadeUpItem}
-                  className="group/partner bg-white backdrop-blur-sm border border-slate-100 rounded-xl p-8 flex items-center justify-center min-h-[110px] sm:min-h-[130px] transition-all duration-300 ease-in-out hover:bg-white hover:border-slate-200 hover:shadow-md hover:-translate-y-0.5"
+                  className="group/partner bg-[var(--color-bg-light)] backdrop-blur-sm border border-[var(--color-border-light)] rounded-xl p-8 flex items-center justify-center min-h-[110px] sm:min-h-[130px] transition-all duration-300 ease-in-out hover:bg-[var(--color-bg-light)] hover:border-[var(--color-border-light)] hover:shadow-md hover:-translate-y-0.5"
                 >
                   <div className="relative w-full h-full flex items-center justify-center">
                     <Image
